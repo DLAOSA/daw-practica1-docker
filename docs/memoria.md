@@ -8,7 +8,7 @@ Autor: Alejandro de la Osa
 
 Construir un entorno local con tres contenedores definidos en un único `docker-compose.yml`: nginx, PHP-FPM 8.3 y MySQL. La página `src/index.php` integra HTML y PHP, conecta a MySQL con PDO y muestra el resultado de una consulta real.
 
-La solución se basa en los requisitos y la rúbrica facilitados. La plantilla de Google Docs aporta el formato de la memoria; no contiene el documento «Práctica 1 — Enunciado del alumno», por lo que no se ha podido contrastar con ese documento.
+La solución se basa en los requisitos y la rúbrica facilitados, que constituyen el alcance de esta práctica. La plantilla de Google Docs aporta el formato de la memoria.
 
 ## Arquitectura y recorrido de una petición
 
