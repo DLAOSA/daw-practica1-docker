@@ -4,6 +4,8 @@
 
 Autor: Alejandro de la Osa
 
+Repositorio público: https://github.com/DLAOSA/daw-practica1-docker
+
 ## Objetivo y alcance
 
 Construir un entorno local con tres contenedores definidos en un único `docker-compose.yml`: nginx, PHP-FPM 8.3 y MySQL. La página `src/index.php` integra HTML y PHP, conecta a MySQL con PDO y muestra el resultado de una consulta real.
@@ -54,7 +56,19 @@ Solo nginx publica un puerto, vinculado a `127.0.0.1`. PHP y MySQL se comunican 
 
 El flujo `.github/workflows/validate.yml` automatiza el arranque, las comprobaciones de sintaxis, la navegación real con Chromium, una vista móvil, la respuesta 404 para un PHP inexistente, el fallo de conexión y la recuperación. Las capturas se obtienen del servicio real, sin sustituir las respuestas de PHP o MySQL.
 
-Estado de las evidencias: ejecución de los contenedores y captura pendientes de publicar y ejecutar el flujo. Este equipo no tiene Docker ni WSL instalados. La presencia del flujo de pruebas no equivale a una ejecución superada.
+La ejecución 35780305976 de GitHub Actions terminó correctamente el 22 de septiembre de 2026. Se verificaron los tres contenedores reales en Ubuntu 24.04, PHP 8.3.33, MySQL 8.4.11, la respuesta HTTP 200, la consulta PDO, la vista móvil sin desbordamiento horizontal, el 404 para un archivo PHP inexistente, el error HTTP 503 al detener MySQL y la recuperación posterior. La validación se realizó en GitHub Actions porque el equipo local no tiene Docker ni WSL instalados.
+
+Registro de la ejecución: https://github.com/DLAOSA/daw-practica1-docker/actions/runs/35780305976
+
+## Capturas del resultado
+
+Captura real de Chromium con nginx, PHP-FPM y MySQL activos durante la validación:
+
+![Conexión correcta mediante PDO y resultado de la consulta a MySQL](resultado.png)
+
+Captura real después de detener el servicio de base de datos. PHP continúa generando HTML y devuelve HTTP 503:
+
+![Error de conexión gestionado por el bloque catch](error-conexion.png)
 
 ## Justificación frente a XAMPP
 
@@ -73,7 +87,7 @@ Esta arquitectura resulta adecuada para aprender la separación de responsabilid
 - RA1.f.3: HTML estructurado con datos PHP escapados y estados de éxito y error.
 - RA1.g.1: Dockerfile de dos instrucciones y configuración nginx limitada a lo necesario.
 - RA1.g.2: comparación argumentada con XAMPP, incluyendo ventajas y límites.
-- RA1.g.3: README con instrucciones e historial de commits por etapas; publicación y captura pendientes de verificación.
+- RA1.g.3: repositorio público, README con instrucciones y captura real e historial de commits por etapas.
 
 ## Fuentes
 

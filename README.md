@@ -2,11 +2,20 @@
 
 0613 · Desarrollo Web en Entorno Servidor · 2.º DAW A
 
+Alejandro de la Osa
+
 Entorno de desarrollo con tres servicios separados: nginx recibe HTTP en el puerto 8080, PHP 8.3 ejecuta el código mediante PHP-FPM y MySQL almacena los datos. La aplicación comprueba la conexión mediante PDO.
 
 ## Puesta en marcha
 
 Requiere Docker Engine con Docker Compose v2 o Docker Desktop en modo de contenedores Linux.
+
+Clona el repositorio y entra en su carpeta:
+
+```sh
+git clone https://github.com/DLAOSA/daw-practica1-docker.git
+cd daw-practica1-docker
+```
 
 Desde la raíz del repositorio:
 
@@ -15,6 +24,12 @@ docker compose up -d
 ```
 
 La primera ejecución descarga las imágenes y construye PHP. Después, abre <http://localhost:8080>.
+
+## Resultado
+
+![Página real con PHP 8.3 y conexión correcta a MySQL mediante PDO](docs/resultado.png)
+
+Captura obtenida en Chromium durante la [ejecución de pruebas superada](https://github.com/DLAOSA/daw-practica1-docker/actions/runs/35780305976), con los tres contenedores activos en GitHub Actions. También se comprobaron la [vista móvil](docs/resultado-movil.png), el [error de conexión](docs/error-conexion.png) y la recuperación de MySQL.
 
 ## Arquitectura
 
@@ -50,6 +65,8 @@ El flujo de GitHub Actions arranca el entorno en Linux, verifica las configuraci
 ## Historial
 
 El historial recoge la preparación del repositorio, la configuración de los servicios, la página PHP y la validación del conjunto.
+
+La memoria técnica está disponible en [Word, con la plantilla facilitada](docs/memoria.docx), y en [Markdown](docs/memoria.md).
 
 ## Referencias
 
