@@ -2,6 +2,8 @@
 
 0613 · Desarrollo Web en Entorno Servidor · 2.º DAW A
 
+Autor: Alejandro de la Osa
+
 ## Objetivo y alcance
 
 Construir un entorno local con tres contenedores definidos en un único `docker-compose.yml`: nginx, PHP-FPM 8.3 y MySQL. La página `src/index.php` integra HTML y PHP, conecta a MySQL con PDO y muestra el resultado de una consulta real.
